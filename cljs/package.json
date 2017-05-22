@@ -1,0 +1,26 @@
+{
+  "name": "cljs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "shadow-cljs": "^0.5.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.5"
+  },
+  "shadow-cljs": {
+    "dependencies": [],
+    "source-paths": [
+      "src-cljs"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-cljs": "./node_modules/shadow-cljs/bin/shadow-cljs --once"
+  }
+}
