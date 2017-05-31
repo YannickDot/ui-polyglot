@@ -1,19 +1,25 @@
 module App = {
   include ReactRe.Component;
+  /* The props type */
   type props = {title: string};
+  /* The string name of the component */
   let name = "App";
-  let handleClick _ _ => {
+  /*  */
+  let handleClick {props} event => {
     Js.log "clicked!";
     None
   };
+  /* {props, state, updater, handler, instanceVars, setState} */
+  let styling = ReactDOMRe.Style.make
+    display::"flex" width::"150px" backgroundColor::"#db4d3f" cursor::"pointer" ();
+
   let render {props, updater} =>
     <div className="App">
       <div className="App-header">
         <div
           onClick=(updater handleClick)
           style=(
-            ReactDOMRe.Style.make
-              display::"flex" width::"200px" backgroundColor::"#db4d3f" cursor::"pointer" ()
+            styling
           )>
           <svg className="App-logo" viewBox="0 0 841.9 595.3" alt="logo">
             <g fill="#fff">
@@ -29,11 +35,10 @@ module App = {
           (ReactRe.stringToElement props.title)
         </h2>
       </div>
-      <p className="App-intro">
-        (ReactRe.stringToElement "To get started, edit ")
-        <code> (ReactRe.stringToElement "src/app.re") </code>
-        (ReactRe.stringToElement " and save to reload.")
-      </p>
+      <div className="App-intro">
+        <StatelessComponent />
+        <StatefulComponent />
+      </div>
     </div>;
 };
 
