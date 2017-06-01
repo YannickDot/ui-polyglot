@@ -6,33 +6,26 @@ module StatefulComponent = {
   let getInitialState _ => { count: 0 };
 
   let styling = ReactDOMRe.Style.make
-    display::"flex"
     padding::"30px"
     color::"white"
-    backgroundColor::"#070A35"
-    cursor::"pointer" ();
+    backgroundColor::"#070A35" ();
 
-  let btnStyle = ReactDOMRe.Style.make
-    padding::"10px 15px"
-    backgroundColor::"green"
-    color::"white" ();
+  let increment {state} _ => Some { count: (state.count + 1) };
+  let decrement {state} _ => Some { count: (state.count - 1) };
 
-  let increment {props, state} event => Some { count: (state.count + 1) };
-  let decrement {props, state} event => Some { count: (state.count - 1) };
-
-  let render {props, state, updater, handler, instanceVars, setState} =>
+  let render {state, updater} =>
     <div style=(styling)>
-      <div>(ReactRe.stringToElement "Hello I'm stateful ! -->")</div>
+      <div>(ReactRe.stringToElement "I'm a stateful component ! ")</div>
 
-      <div onClick=(updater increment) style=(btnStyle)>
+      <button onClick=(updater increment)>
         (ReactRe.stringToElement "+1")
-      </div>
-      <div onClick=(updater decrement) style=(btnStyle)>
+      </button>
+      <button onClick=(updater decrement)>
         (ReactRe.stringToElement "-1")
-      </div>
+      </button>
       <div>
-        (ReactRe.stringToElement "Count : ")
-        (ReactRe.stringToElement (string_of_int state.count))
+        (ReactRe.stringToElement
+          ("Count : " ^ (string_of_int state.count)))
       </div>
     </div>;
 };

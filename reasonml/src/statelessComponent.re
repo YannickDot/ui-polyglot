@@ -1,22 +1,20 @@
 module StatelessComponent = {
   include ReactRe.Component;
   let name = "StatelessComponent";
-  type props = unit;
+  type props = { name: string };
 
   let styling = ReactDOMRe.Style.make
-    display::"flex"
     padding::"30px"
     color::"white"
-    backgroundColor::"#db4d3f"
-    cursor::"pointer" ();
+    backgroundColor::"#db4d3f" ();
 
   let render {props, updater} =>
     <div style=(styling)>
-      (ReactRe.stringToElement "Hello I'm stateless !")
-      (ReactRe.stringToElement "")
+      (ReactRe.stringToElement
+        ("I'm a stateless component ! And my name is " ^ props.name))
     </div>;
 };
 
 include ReactRe.CreateComponent StatelessComponent;
 
-let createElement = wrapProps ();
+let createElement ::name => wrapProps {name: name};
