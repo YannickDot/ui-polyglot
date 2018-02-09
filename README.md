@@ -20,5 +20,7 @@ Create an app with two screens (with routing between them)
 - PureScript: [http://www.purescript.org/learn/getting-started/](http://www.purescript.org/learn/getting-started/)
 - React VR : [https://github.com/facebook/react-vr](https://github.com/facebook/react-vr)
 - Elm : [https://guide.elm-lang.org/install.html#elm-reactor](https://guide.elm-lang.org/install.html#elm-reactor)
-- ReasonReact : [https://github.com/knowbody/crra](https://github.com/knowbody/crra)
+- ReasonReact :
+  - [https://github.com/knowbody/crra](https://github.com/knowbody/crra)
+  - [https://github.com/reasonml/reason-react/blob/master/documentation.md#createelement](https://github.com/reasonml/reason-react/blob/master/documentation.md#createelement)
 - Electron : [https://electron.atom.io](https://electron.atom.io)

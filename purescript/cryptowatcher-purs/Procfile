@@ -1,0 +1,2 @@
+purescript: pulp --watch browserify -O --to output.js
+webserver: live-server --watch=index.html,output.js
