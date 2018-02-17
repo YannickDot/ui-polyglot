@@ -8,18 +8,22 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "pulp --watch browserify -O --to output.js",
-    "build": "pulp browserify -O --to output.js",
+    "watch": "parcel -p 8080 index.html",
+    "build": "parcel index.html",
     "start": "nf start"
   },
-  "author": "Yannick Spark <sparky.creativespace@gmail.com> (https://sparkyspace.com/)",
+  "author":
+    "Yannick Spark <sparky.creativespace@gmail.com> (https://sparkyspace.com/)",
   "license": "MIT",
   "devDependencies": {
     "foreman": "^2.0.0",
     "live-server": "^1.2.0"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "create-react-class": "^15.6.3",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.12",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
